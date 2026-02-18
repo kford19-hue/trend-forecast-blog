@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEON ORBIT | Fashion Forecast Blog</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">◎</div>
+        <div class="brand-text">
+          <h1>NEON ORBIT</h1>
+          <p class="tagline">futuristic fashion trend forecasting logbook</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="themeToggle" class="btn btn-ghost" type="button" aria-label="Toggle theme">
+          <span class="btn-icon" aria-hidden="true">☾</span>
+          <span class="btn-label">Mode</span>
+        </button>
+        <a class="btn btn-solid" href="#posts">
+          <span class="btn-icon" aria-hidden="true">⟡</span>
+          <span class="btn-label">Enter Feed</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero-left">
+          <div class="pill">
+            <span class="dot" aria-hidden="true"></span>
+            <span>Forecast Window: <strong id="forecastWindow">2026 → 2028</strong></span>
+          </div>
+
+          <h2>
+            A blog for <span class="glow">future silhouettes</span>, material myths,
+            and culture-coded styling signals.
+          </h2>
+
+          <p class="subcopy">
+            Search emerging aesthetics, track macro shifts, and collect micro-trends like
+            little shiny artifacts from tomorrow.
+          </p>
+
+          <div class="hero-controls" id="posts">
+            <div class="control">
+              <label for="searchInput">Search</label>
+              <input id="searchInput" type="search" placeholder="Try: “chrome”, “mesh”, “neo-romance”…" />
+            </div>
+
+            <div class="control">
+              <label for="categorySelect">Category</label>
+              <select id="categorySelect">
+                <option value="all">All</option>
+              </select>
+            </div>
+
+            <div class="control">
+              <label for="yearSelect">Year</label>
+              <select id="yearSelect">
+                <option value="all">All</option>
+              </select>
+            </div>
+
+            <div class="control control-inline">
+              <label class="check">
+                <input id="featuredOnly" type="checkbox" />
+                <span>Featured only</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="meta-row">
+            <div class="meta-card">
+              <div class="meta-k">Signals</div>
+              <div class="meta-v" id="signalCount">0</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-k">Categories</div>
+              <div class="meta-v" id="categoryCount">0</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-k">Updated</div>
+              <div class="meta-v" id="lastUpdated">—</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-right">
+          <div class="featured-card" id="featuredCard" aria-live="polite">
+            <!-- injected by app.js -->
+          </div>
+
+          <div class="tag-cloud">
+            <div class="tag-cloud-title">Popular tags</div>
+            <div class="tag-list" id="tagList">
+              <!-- injected by app.js -->
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="feed">
+        <div class="feed-head">
+          <h3>Trend Feed</h3>
+          <div class="feed-actions">
+            <button class="btn btn-ghost" id="clearFilters" type="button">
+              <span class="btn-icon" aria-hidden="true">↺</span>
+              <span class="btn-label">Reset</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="posts" id="postGrid" aria-live="polite">
+          <!-- injected by app.js -->
+        </div>
+
+        <div class="empty" id="emptyState" hidden>
+          <div class="empty-icon" aria-hidden="true">⌁</div>
+          <h4>No matches in this orbit</h4>
+          <p>Try a different keyword, category, or year.</p>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>
+          Built as a static site. Edit the <code>posts</code> array in <code>app.js</code> to add entries.
+        </p>
+      </footer>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
